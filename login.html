@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/87903c1d5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/scss/index.css" />
+    <link rel="stylesheet" href="/scss/login.css" />
   </head>
   <body>
     <header>
@@ -43,41 +44,32 @@
         </div>
       </nav>
     </header>
-    <main class="body-wrap">
-      <section class="pt-4">
-        <div class="d-flex flex-column align-items-center justify-content-center">
-          <h2>New Post</h2>
-          <form action="/index.html" class="new-post-wrap p-3">
-            <textarea name="new-post--text" id="new-post--text" cols="50" rows="3"></textarea>
-            <br />
-            <input type="submit" value="Post" />
-            <input type="button" value="Upload img" />
-          </form>
-        </div>
-      </section>
-      <section class="old-post mt-4 d-flex justify-content-center">
-        <div class="old-post-wrap d-flex flex-column p-3">
-          <div class="d-flex">
-            <div class="user-profile">
+    <main class="login-main d-flex justify-content-center">
+        <div class="login-box d-flex flex-column justify-content-center align-items-center rounded p-4">
+          <div class="text">
+            <h1 class="d-flex justify-content-center">LOGIN</h1>
+            <div class="login-form d-flex flex-column">
+              <p>Already have an account? Log in below.</p>
+              <a href="#">Or create a new account.</a>
+            </div>
+            <form class="login-form mt-4 font-weight-bold">
+              <label for="username">Email or Username</label><br />
+              <input
+                type="text"
+                class="username my-2"
+                name="username"
+                placeholder="Enter username"
+              /><br />
+              <label for="pwd">Password</label><br />
+              <input type="password" class="pwd my-2" name="pwd" placeholder="Enter password" />
+            </form>
+            <div class="button d-flex justify-content-center align-items-center">
               <a href="/profile.html">
-                <img src="/pic/IMG_2437.jpg" alt="profile picture" class="profile-pic"/>
+                <button class="cta-login">Login</button>
               </a>
             </div>
-            <div class="user-name ps-3 pt-1 ">
-              <h4>Thong Trong Ho</h4> 
-            </div>
           </div>
-          <div class="user-status mt-3">
-            <p>Just took a new picutre</p>
-          </div>
-          <div class="post-pic-wrap mb-3"><img src="/pic/IMG_2437.jpg" alt="picture of me" class="post-pic"></div>
-       <div class="user-interaction-wrap d-flex justify-content-between">
-        <p>Likes</p>
-        <p>Comments</p>
-        <p>Share</p></div>
-       </div>
-
-      </section>
-    </main>
-  </body>
+        </div>
+      </main>
+ </body>
 </html>

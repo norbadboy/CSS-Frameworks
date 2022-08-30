@@ -1,0 +1,13 @@
+$profilePicSize: 250px;
+$profilePicBorder: 7em;
+$borderBox: 1px solid black;
+
+.profile-pic {
+  width: $profilePicSize;
+  height: $profilePicSize;
+  border-radius: $profilePicBorder;
+}
+.user-details-text{
+  border: $borderBox;
+  width: 500px;
+}
