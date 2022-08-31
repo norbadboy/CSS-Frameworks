@@ -31,28 +31,65 @@
           <form action="/index.html">
             <label for="searchfield">search</label>
             <input class="form-controll" type="text" name="search" />
-            <button type="submit">
+            <button class="search-button rounded" type="submit">
               <i class="fa fa-search" id="search-bar-icon"></i>
             </button>
           </form>
         </div>
         <div class="button d-flex">
-         <button class="cta-button" onclick="window.location.href='/login.html'">Login</button>
-         <button class="cta-button" onclick="window.location.href='#'">Sign up</button>  
-        </div>
+          <button class="login-button rounded px-2" onclick="window.location.href='/login.html'">
+            Login
+          </button>
+          <button class="sign-up-button rounded ms-2" onclick="window.location.href='#'">
+            Sign up
+          </button>
         </div>
       </nav>
     </header>
-    <main class="body-wrap">
-      <section class="pt-4">
-        <div class="d-flex flex-column align-items-center justify-content-center">
+    <main class="body-wrap px-4">
+      <section class="pt-4 d-flex justify-content-center">
+        <div class="d-flex flex-column">
           <h2>New Post</h2>
-          <form action="/index.html" class="new-post-wrap p-3">
-            <textarea name="new-post--text" id="new-post--text" cols="50" rows="3"></textarea>
+          <form action="/index.html" class="new-post-wrap p-3 rounded">
+            <textarea
+              name="new-post--text"
+              id="new-post--text"
+              cols="40"
+              rows="3"
+              placeholder="What are you thinking?"
+              class="rounded"
+            ></textarea>
             <br />
-            <input type="submit" value="Post" />
-            <input type="button" value="Upload img" />
+            <div class="mt-1">
+              <input class="rounded" type="submit" value="Post" />
+              <input class="rounded ms-2" type="button" value="Upload img" />
+            </div>
           </form>
+        </div>
+      </section>
+      <section class="old-post mt-4 d-flex justify-content-center">
+        <div class="old-post-wrap d-flex flex-column p-3 rounded">
+          <div class="d-flex">
+            <div class="user-profile">
+              <a href="/profile.html">
+                <img src="/pic/IMG_2437.jpg" alt="profile picture" class="profile-pic" />
+              </a>
+            </div>
+            <div class="user-name ps-3 pt-1">
+              <h4>Thong Trong Ho</h4>
+            </div>
+          </div>
+          <div class="user-status mt-3">
+            <p>Just took a new picutre</p>
+          </div>
+          <div class="post-pic-wrap mb-4">
+            <img src="/pic/IMG_2437.jpg" alt="picture of me" class="post-pic" />
+          </div>
+          <div class="user-interaction-wrap d-flex justify-content-between pt-2">
+            <p class="user-interaction-text">Likes</p>
+            <p class="user-interaction-text">Comments</p>
+            <p class="user-interaction-text">Share</p>
+          </div>
         </div>
       </section>
       <section class="old-post mt-4 d-flex justify-content-center">
@@ -60,23 +97,25 @@
           <div class="d-flex">
             <div class="user-profile">
               <a href="/profile.html">
-                <img src="/pic/IMG_2437.jpg" alt="profile picture" class="profile-pic"/>
+                <img src="/pic/IMG_2437.jpg" alt="profile picture" class="profile-pic" />
               </a>
             </div>
-            <div class="user-name ps-3 pt-1 ">
-              <h4>Thong Trong Ho</h4> 
+            <div class="user-name ps-3 pt-1">
+              <h4>Thong Trong Ho</h4>
             </div>
           </div>
           <div class="user-status mt-3">
             <p>Just took a new picutre</p>
           </div>
-          <div class="post-pic-wrap mb-3"><img src="/pic/IMG_2437.jpg" alt="picture of me" class="post-pic"></div>
-       <div class="user-interaction-wrap d-flex justify-content-between">
-        <p>Likes</p>
-        <p>Comments</p>
-        <p>Share</p></div>
-       </div>
-
+          <div class="post-pic-wrap mb-4">
+            <img src="/pic/IMG_2437.jpg" alt="picture of me" class="post-pic" />
+          </div>
+          <div class="user-interaction-wrap d-flex justify-content-between pt-2">
+            <p class="user-interaction-text">Likes</p>
+            <p class="user-interaction-text">Comments</p>
+            <p class="user-interaction-text">Share</p>
+          </div>
+        </div>
       </section>
     </main>
   </body>

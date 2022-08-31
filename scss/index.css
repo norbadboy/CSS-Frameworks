@@ -9,6 +9,10 @@ h4 {
   font-size: 27px;
 }
 
+.user-interaction-text {
+  font-size: 15px;
+}
+
 label {
   color: white;
 }
@@ -38,14 +42,37 @@ a:hover {
   font-weight: 700;
 }
 
+.search-button {
+  background-color: none;
+}
+
+#search-bar-icon {
+  color: rgb(138, 194, 129);
+  background-color: none;
+}
+
 .profile-pic {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 1em;
 }
 
-.cta-button {
-  border-radius: 15px;
+button,
+input {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+}
+
+.login-button {
+  background-color: rgb(138, 194, 129);
+  color: white;
+}
+
+.sign-up-button {
+  color: rgb(138, 194, 129);
 }
 
 body {
@@ -57,11 +84,6 @@ body {
 .new-post-wrap,
 .old-post-wrap {
   background-color: rgba(45, 45, 45, 0.811);
-  border-radius: 8px;
-}
-
-.old-post-wrap {
-  width: 43.5%;
 }
 
 .post-pic {
