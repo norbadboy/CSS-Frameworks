@@ -1,0 +1,100 @@
+$primaryColor: rgb(138, 194, 129);
+$secondaryColor: rgba(45, 45, 45, 0.811);
+$primaryFont: "Noto Sans JP", sans-serif;
+$secondaryFont: "Fira Sans", sans-serif;
+$desktopWidth: 1440px;
+$bodyColor: rgba(3, 4, 3, 0.907);
+$textColor: white;
+$postPictureWidth: 100%;
+$postPictureHeigth: 500px;
+
+// Text
+p,
+h2,
+h4 {
+  color: $textColor;
+  font-family: $secondaryFont;
+}
+h4 {
+  font-size: 27px;
+}
+.user-interaction-text {
+  font-size: 15px;
+}
+
+// NAV BAR
+label {
+  color: $textColor;
+}
+.navbar {
+  background-color: $secondaryColor;
+}
+.fa-address-book {
+  font-size: 30px;
+  color: $primaryColor;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: $textColor;
+  font-family: $secondaryFont;
+}
+a:hover {
+  color: $primaryColor;
+}
+.contactbook {
+  font-family: $primaryFont;
+  font-weight: 700;
+}
+.search-button {
+  background-color: none;
+}
+#search-bar-icon {
+  color: $primaryColor;
+  background-color: none;
+}
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 1em;
+}
+button,
+input {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-family: $secondaryFont;
+  font-size: 16px;
+}
+.login-button {
+  background-color: $primaryColor;
+  color: $textColor;
+}
+.sign-up-button {
+  color: $primaryColor;
+}
+
+// BODY
+body {
+  max-width: $desktopWidth;
+  overflow-x: hidden;
+  background-color: $bodyColor;
+}
+
+// New post
+.new-post-wrap,
+.old-post-wrap {
+  background-color: $secondaryColor;
+}
+
+// Old post
+
+.post-pic {
+  width: $postPictureWidth;
+  height: $postPictureHeigth;
+  object-fit: cover;
+}
+.user-interaction-wrap {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}

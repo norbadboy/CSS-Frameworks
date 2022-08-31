@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="a social media application" />
+    <meta name="author" content="Thong Trong Ho" />
+    <title>Contactbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/87903c1d5c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/scss/index.css" />
+    <link rel="stylesheet" href="/scss/login.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar d-flex justify-content-between px-4">
+        <!-- SEARH FIELD -->
+        <div>
+          <a href="/index.html" class="d-flex">
+            <i class="fa-solid fa-address-book"></i>
+            <div class="contactbook ms-2">Contactbook</div>
+          </a>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <form action="/index.html">
+            <label for="searchfield">search</label>
+            <input class="form-controll" type="text" name="search" />
+            <button type="submit">
+              <i class="fa fa-search" id="search-bar-icon"></i>
+            </button>
+          </form>
+        </div>
+        <div class="button d-flex">
+         <button class="cta-button" onclick="window.location.href='/login.html'">Login</button>
+         <button class="cta-button" onclick="window.location.href='#'">Sign up</button>  
+        </div>
+        </div>
+      </nav>
+    </header>
+    <main class="login-main d-flex justify-content-center">
+        <div class="login-box d-flex flex-column justify-content-center align-items-center rounded p-4">
+          <div class="text">
+            <h1 class="d-flex justify-content-center">LOGIN</h1>
+            <div class="login-form d-flex flex-column">
+              <p>Already have an account? Log in below.</p>
+              <a href="#">Or create a new account.</a>
+            </div>
+            <form class="login-form mt-4 font-weight-bold">
+              <label for="username">Email or Username</label><br />
+              <input
+                type="text"
+                class="username my-2"
+                name="username"
+                placeholder="Enter username"
+              /><br />
+              <label for="pwd">Password</label><br />
+              <input type="password" class="pwd my-2" name="pwd" placeholder="Enter password" />
+            </form>
+            <div class="button d-flex justify-content-center align-items-center">
+              <a href="/profile.html">
+                <button class="cta-login">Login</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+ </body>
+</html>

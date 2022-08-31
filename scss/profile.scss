@@ -1,0 +1,30 @@
+$userProfilePic: 40px;
+$profilePicSize: 250px;
+$profilePicBorder: 7em;
+$borderBox: 1px solid white;
+$secondaryColor: rgba(45, 45, 45, 0.811);
+
+.user-profile-pic {
+  width: $userProfilePic;
+  height: $userProfilePic;
+  border-radius: $profilePicBorder;
+}
+
+// Body
+.user-info {
+  background-color: $secondaryColor;
+}
+.profile-details-pic {
+  width: $profilePicSize;
+  height: $profilePicSize;
+  border-radius: $profilePicBorder;
+}
+.user-details-wrap {
+  color: white;
+}
+.user-details-text {
+  border: $borderBox;
+  width: 500px;
+  height: 150px;
+  padding: 5px;
+}
