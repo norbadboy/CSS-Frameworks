@@ -16,37 +16,62 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/87903c1d5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/scss/index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-      <nav class="navbar d-flex justify-content-between px-4">
-        <!-- SEARH FIELD -->
-        <div>
+      <nav class="navigation d-flex justify-content-between px-4">
+        <section class="logo-wrap d-flex flex-column justify-content-center">
           <a href="/index.html" class="d-flex">
             <i class="fa-solid fa-address-book"></i>
             <div class="contactbook ms-2">Contactbook</div>
           </a>
-        </div>
-        <div class="d-flex align-items-center justify-content-center">
-          <form action="/index.html">
-            <label for="searchfield">search</label>
-            <input class="form-controll" type="text" name="search" />
-            <button class="search-button rounded" type="submit">
-              <i class="fa fa-search" id="search-bar-icon"></i>
-            </button>
-          </form>
-        </div>
-        <div class="button d-flex">
-          <button class="login-button rounded px-2" onclick="window.location.href='/login.html'">
-            Login
+        </section>
+        <!--HAMBURGER ICON-->
+        <section class="navbar navbar-expand-md">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <button class="sign-up-button rounded ms-2" onclick="window.location.href='#'">
-            Sign up
-          </button>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav justify-content-between">
+              <form class="form-wrap d-flex">
+                <input class="form-control me-1" type="search" placeholder="Search" />
+                <button class="search-btn rounded" type="submit">
+                  <i class="fa fa-search" id="search-bar-icon"></i>
+                </button>
+              </form>
+              <div class="cta-button d-flex">
+                <button class="login-btn rounded" onclick="window.location.href='/login.html'">
+                  Login
+                </button>
+                <button class="sign-up-btn rounded" onclick="window.location.href='#'">
+                  Sign up
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </nav>
     </header>
-    <main class="body-wrap px-4">
+    <main class="body-wrap px-4 pb-5">
       <section class="pt-4 d-flex justify-content-center">
         <div class="d-flex flex-column">
           <h2>New Post</h2>
@@ -97,18 +122,18 @@
           <div class="d-flex">
             <div class="user-profile">
               <a href="/profile.html">
-                <img src="/pic/IMG_2437.jpg" alt="profile picture" class="profile-pic" />
+                <img src="/pic/cat-1.png" alt="profile picture" class="profile-pic" />
               </a>
             </div>
             <div class="user-name ps-3 pt-1">
-              <h4>Thong Trong Ho</h4>
+              <h4>Catto</h4>
             </div>
           </div>
           <div class="user-status mt-3">
             <p>Just took a new picutre</p>
           </div>
           <div class="post-pic-wrap mb-4">
-            <img src="/pic/IMG_2437.jpg" alt="picture of me" class="post-pic" />
+            <img src="/pic/cat-2.jpg" alt="picture of me" class="post-pic" />
           </div>
           <div class="user-interaction-wrap d-flex justify-content-between pt-2">
             <p class="user-interaction-text">Likes</p>

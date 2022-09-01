@@ -43,4 +43,8 @@ form label:hover {
 
 .cta-login {
   font-family: "Fira Sans", sans-serif;
+}
+
+.login-form a {
+  text-decoration: underline;
 }/*# sourceMappingURL=login.css.map */
