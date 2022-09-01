@@ -10,13 +10,21 @@ $postPictureHeigth: 500px;
 
 // Text
 p,
+h1,
 h2,
+h3,
 h4 {
   color: $textColor;
   font-family: $secondaryFont;
 }
-h4 {
+h1 {
+  font-size: 33px;
+}
+h2 {
   font-size: 27px;
+}
+h4 {
+  font-size: 24px;
 }
 .user-interaction-text {
   font-size: 15px;
@@ -26,7 +34,7 @@ h4 {
 label {
   color: $textColor;
 }
-.navbar {
+.navigation {
   background-color: $secondaryColor;
 }
 .fa-address-book {
@@ -46,32 +54,59 @@ a:hover {
   font-family: $primaryFont;
   font-weight: 700;
 }
-.search-button {
-  background-color: none;
-}
-#search-bar-icon {
-  color: $primaryColor;
-  background-color: none;
-}
 .profile-pic {
   width: 50px;
   height: 50px;
   border-radius: 1em;
 }
+.form-control {
+  height: 35px;
+}
+.form-wrap input {
+  width: 250px;
+}
+.collapse {
+  display: flex;
+}
+.navbar-nav {
+  display: flex;
+  flex: 1;
+}
+.logo-wrap {
+  flex: 1;
+}
+.navbar {
+  flex: 2;
+}
+
+// Button
 button,
 input {
   border: none;
-  text-align: center;
   text-decoration: none;
   font-family: $secondaryFont;
   font-size: 16px;
+  padding: 5px;
+  letter-spacing: 1px;
 }
-.login-button {
+.login-btn {
   background-color: $primaryColor;
   color: $textColor;
+  width: 80px;
+  margin-right: 10px;
 }
-.sign-up-button {
-  color: $primaryColor;
+.sign-up-btn {
+  color: $bodyColor;
+  width: 80px;
+}
+.navbar-toggler {
+  background-color: white;
+  color: $secondaryColor;
+  font-size: 16px;
+  border: none;
+}
+.navbar-toggler-icon {
+  border: none;
 }
 
 // BODY
@@ -88,7 +123,9 @@ body {
 }
 
 // Old post
-
+.post-pic-wrap {
+  max-width: 380px;
+}
 .post-pic {
   width: $postPictureWidth;
   height: $postPictureHeigth;
@@ -98,3 +135,37 @@ body {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
+
+// Tablet
+@media only screen and (max-width: 767px) {
+  .collapse {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .navbar-nav {
+    margin-top: 15px;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    border-top: 1px solid white;
+  }
+  .cta-button {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .login-btn {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .form-wrap {
+    margin-top: 10px;
+    justify-items: flex-end;
+    margin-right: 0;
+  }
+  .form-wrap input {
+    width: 190px;
+  }
+}
+
+// @media only screen and (max-width: 580px) {
+
+// }

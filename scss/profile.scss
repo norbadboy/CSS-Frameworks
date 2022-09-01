@@ -1,9 +1,20 @@
 $userProfilePic: 40px;
-$profilePicSize: 250px;
+$profilePicSize: 180px;
 $profilePicBorder: 7em;
 $borderBox: 1px solid white;
 $secondaryColor: rgba(45, 45, 45, 0.811);
+$contactPicSize: 80px;
 
+body {
+  margin: 0;
+  padding: 0;
+}
+.user-interaction {
+  flex: 2;
+}
+.contact-list-wrap {
+  flex: 1;
+}
 .user-profile-pic {
   width: $userProfilePic;
   height: $userProfilePic;
@@ -11,6 +22,10 @@ $secondaryColor: rgba(45, 45, 45, 0.811);
 }
 
 // Body
+.row > * {
+  padding-left: 0;
+  padding-right: 30px;
+}
 .user-info {
   background-color: $secondaryColor;
 }
@@ -21,10 +36,42 @@ $secondaryColor: rgba(45, 45, 45, 0.811);
 }
 .user-details-wrap {
   color: white;
+  flex-direction: column;
 }
 .user-details-text {
   border: $borderBox;
-  width: 500px;
   height: 150px;
-  padding: 5px;
+  flex: 1;
+}
+.contact-list {
+  background-color: $secondaryColor;
+  height: 100vh;
+}
+.col-sm img {
+  height: $contactPicSize;
+  width: $contactPicSize;
+}
+
+// Tablet
+@media only screen and (max-width: 767px) {
+  .main-wrap {
+    flex-direction: column-reverse;
+  }
+  .contact-list-body {
+    display: flex;
+  }
+  .user-info {
+    flex-direction: column;
+  }
+  .user-details-wrap {
+    margin-top: 20px;
+  }
+  .profile-details-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-list-first {
+    margin-right: 20px;
+  }
 }

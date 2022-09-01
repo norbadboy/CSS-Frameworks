@@ -1,7 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.user-interaction {
+  flex: 2;
+}
+
+.contact-list-wrap {
+  flex: 1;
+}
+
 .user-profile-pic {
   width: 40px;
   height: 40px;
   border-radius: 7em;
+}
+
+.row > * {
+  padding-left: 0;
+  padding-right: 30px;
 }
 
 .user-info {
@@ -9,18 +27,51 @@
 }
 
 .profile-details-pic {
-  width: 250px;
-  height: 250px;
+  width: 180px;
+  height: 180px;
   border-radius: 7em;
 }
 
 .user-details-wrap {
   color: white;
+  flex-direction: column;
 }
 
 .user-details-text {
   border: 1px solid white;
-  width: 500px;
   height: 150px;
-  padding: 5px;
+  flex: 1;
+}
+
+.contact-list {
+  background-color: rgba(45, 45, 45, 0.811);
+  height: 100vh;
+}
+
+.col-sm img {
+  height: 80px;
+  width: 80px;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-wrap {
+    flex-direction: column-reverse;
+  }
+  .contact-list-body {
+    display: flex;
+  }
+  .user-info {
+    flex-direction: column;
+  }
+  .user-details-wrap {
+    margin-top: 20px;
+  }
+  .profile-details-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-list-first {
+    margin-right: 20px;
+  }
 }/*# sourceMappingURL=profile.css.map */
