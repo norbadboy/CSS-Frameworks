@@ -7,6 +7,10 @@ $bodyColor: rgba(3, 4, 3, 0.907);
 $textColor: white;
 $postPictureWidth: 100%;
 $postPictureHeigth: 500px;
+$fontSizeH1: 33px;
+$fontSizeH2: 27px;
+$fontSizeH4: 24px;
+$fontSizeParagraph: 15px;
 
 // Text
 p,
@@ -18,16 +22,16 @@ h4 {
   font-family: $secondaryFont;
 }
 h1 {
-  font-size: 33px;
+  font-size: $fontSizeH1;
 }
 h2 {
-  font-size: 27px;
+  font-size: $fontSizeH2;
 }
 h4 {
-  font-size: 24px;
+  font-size: $fontSizeH4;
 }
 .user-interaction-text {
-  font-size: 15px;
+  font-size: $fontSizeParagraph;
 }
 
 // NAV BAR
@@ -40,7 +44,6 @@ label {
 .fa-address-book {
   font-size: 30px;
   color: $primaryColor;
-  text-decoration: none;
 }
 a {
   text-decoration: none;
@@ -52,7 +55,6 @@ a:hover {
 }
 .contactbook {
   font-family: $primaryFont;
-  font-weight: 700;
 }
 .profile-pic {
   width: 50px;
@@ -93,14 +95,12 @@ input {
   background-color: $primaryColor;
   color: $textColor;
   width: 80px;
-  margin-right: 10px;
 }
 .sign-up-btn {
   color: $bodyColor;
   width: 80px;
 }
 .navbar-toggler {
-  background-color: white;
   color: $secondaryColor;
   font-size: 16px;
   border: none;
