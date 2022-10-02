@@ -27,6 +27,7 @@
       integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/index.mjs" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -80,32 +81,35 @@
           <h1 class="d-flex justify-content-center mb-4">LOGIN</h1>
           <div class="login-text d-flex flex-column">
             <p>Already have an account? Log in below.</p>
-            <a href="#">Or create a new account.</a>
+            <a href="/register.html">Or create a new account.</a>
           </div>
-          <form
-            class="login-form mt-3 font-weight-bold"
-            id="formFeedback"
-            action="/profile.html"
-            onSubmit="log_console()"
-            method="GET"
-          >
+          <form class="login-form mt-3 font-weight-bold" id="loginForm">
             <label class="form-name" for="email">Email</label>
-            <input class="input-text" type="text" name="email" id="email" required />
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              id="email"
+              required
+              pattern="^[\w\-.]+@(stud.)?noroff.no$"
+              title="Only @(study.)noroff.no domains are allow to register."
+            />
             <div class="form-error" id="emailError">Invalid e-mail</div>
             <label class="form-name mt-4" for="pwd">Password</label>
-            <input type="password" class="pwd my-2" name="pwd" id="password" required />
-            <div class="form-error" id="pwdError">Minimum 8 characters</div>
             <input
-              class="login-btn d-flex justify-content-center align-items-center rounded mt-3"
-              type="submit"
-              id="submit"
-              value="Login"
+              type="password"
+              class="form-control my-2"
+              name="password"
+              id="password"
+              required
+              minlength="8"
             />
+            <div class="form-error" id="pwdError">Minimum 8 characters</div>
+            <button class="btn btn-success text-light">Login</button>
           </form>
         </div>
       </div>
     </main>
-    <script src="/js/login.js"></script>
     <script src="/js/displayError.js"></script>
   </body>
 </html>
