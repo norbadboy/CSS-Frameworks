@@ -48,3 +48,4 @@ function log_console() {
     window.location.href = "/profile.html";
   }
 }
+export { validateEmail, validationForm, log_console };
