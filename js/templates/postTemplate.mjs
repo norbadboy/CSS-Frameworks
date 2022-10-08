@@ -1,1 +1,31 @@
-export function postTemplate(postData)
+export function postTemplateA(postData) {
+  return `
+        <div class="post">
+        <h2>${postData.title}</h2>
+        <p>${postData.body}</p>
+        </div>
+    `;
+}
+
+export function postTemplateB(postData) {
+  const post = document.createElement("div");
+  post.classList.add("post");
+  post.innerText = postData.title;
+
+  if (postData.media) {
+    const img = document.createElement("img");
+    img.src = postData.media;
+    img.alt = `Image from ${postData.title}`;
+    img.classList.add("post-pic")
+    post.append(img);
+  }
+  return post;
+}
+
+export function renderPostTemplate(postData, parent) {
+  parent.appendChild(postTemplateB(postData));
+}
+
+export function renderPostTemplates(postDataList, parent) {
+  parent.append(...postDataList.map(postTemplateB));
+}
