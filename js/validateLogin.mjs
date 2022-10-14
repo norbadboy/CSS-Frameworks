@@ -45,7 +45,6 @@ function validateEmail(email) {
 
 function log_console() {
   if (validateEmail(emailForm.value) && checkLength(pwdForm.value, 8) === true) {
-    window.location.href = "/profile.html";
+    window.location.href = "/postsIndex.html";
   }
 }
-export { validateEmail, validationForm, log_console };

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/87903c1d5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/scss/index.css" />
+    <link rel="stylesheet" href="/scss/register.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -29,93 +30,61 @@
     <script src="/js/index.mjs" defer type="module"></script>
   </head>
   <body>
-    <header>
-      <nav class="navigation d-flex justify-content-between px-4">
-        <section class="logo-wrap d-flex flex-column justify-content-center">
-          <a href="/index.html" class="d-flex">
-            <i class="fa-solid fa-address-book text-decoration-none"></i>
-            <div class="contactbook ms-2 font-weight-bold">Contactbook</div>
-          </a>
-        </section>
-        <!--HAMBURGER ICON-->
-        <section class="navbar navbar-expand-md">
-          <a class="navbar-brand" href="#"></a>
-          <button
-            class="navbar-toggler bg-white"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav justify-content-between">
-              <form class="form-wrap d-flex">
-                <input class="form-control me-1" type="search" placeholder="Search" />
-                <button class="search-btn rounded" type="submit">
-                  <i class="fa fa-search" id="search-bar-icon"></i>
-                </button>
-              </form>
-              <div class="cta-button d-flex">
-                <button class="login-btn rounded mx-2" onclick="window.location.href='/login.html'">
-                  Login
-                </button>
-                <button class="sign-up-btn rounded" onclick="window.location.href='#'">
-                  Sign up
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </nav>
-    </header>
-    <main class="flex-grow-1 text-light mt-2">
-      <div class="container-fluid">
+    <main class="register-main d-flex min-vh-100 justify-content-center text-light">
+      <div class="register-box d-flex flex-column justify-content-center rounded px-4" id="newUser">
         <div class="row justify-content-center">
-          <div class="col-12 col-md-6">
+          <div class="text">
+            <h1 class="d-flex justify-content-center mb-4">register</h1>
             <form id="registerForm">
               <div class="form-group mb-3">
-                <label for="">
-                  Name
-                  <input
-                    class="form-control"
-                    type="text"
-                    name="name"
-                    required
-                    pattern="^[\w]+$"
-                    title="User name must only contain lowsercase and uppercase, numbers and underscore."
-                  />
-                </label>
+                <label for="" class="mb-1"> Name </label>
+                <input
+                  class="form-control py-3"
+                  type="text"
+                  name="name"
+                  required
+                  pattern="^[\w]+$"
+                  title="User name must only contain lowercase and uppercase, numbers and underscore"
+                />
+                <p class="mt-1 ps-1 text-small" id="login-email-error">
+                  Only lowercase and uppercase, numbers and underscore (_)
+                </p>
               </div>
               <div class="form-group mb-3">
-                <label for=""
-                  >Email
-                  <input
-                    class="form-control"
-                    type="email"
-                    name="email"
-                    required
-                    pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                    title="Only @(study.)noroff.no domains are allow to register."
-                  />
-                </label>
+                <label for="" class="mb-1">Email </label>
+                <input
+                  class="form-control py-3"
+                  type="email"
+                  name="email"
+                  required
+                  pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                  title="Only @(study.)noroff.no domains are allow to register."
+                />
+                <p class="mt-1 ps-1 text-small">Only email from @noroff.no or @stud.noroff.no</p>
               </div>
               <div class="form-group mb-3">
-                <label for=""
-                  >Password (min 8 characters)
-                  <input
-                    class="form-control"
-                    type="password"
-                    name="password"
-                    required
-                    minlength="8"
-                  />
-                </label>
+                <label for="" class="mb-1">Password </label>
+                <input
+                  class="form-control py-3"
+                  type="password"
+                  name="password"
+                  required
+                  minlength="8"
+                />
+                <p class="mt-1 text-small">Minimum 8 characters</p>
               </div>
-              <button class="btn btn-success text-light">Register</button>
+              <div>
+                <input
+                  class="btn btn-success text-light"
+                  type="submit"
+                  id="submit"
+                  value="Register"
+                />
+                <div class="d-flex mt-2">
+                  <p>or</p>
+                  <a href="/" class="text-decoration-underline px-1">log in</a>
+                </div>
+              </div>
             </form>
           </div>
         </div>

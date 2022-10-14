@@ -1,0 +1,29 @@
+$primaryColor: rgb(138, 194, 129);
+$secondaryColor: rgba(45, 45, 45, 0.811);
+$textColor: white;
+$paddingLoginBox: 0 40px 30px 40px;
+$primaryFont: "Noto Sans JP", sans-serif;
+$secondaryFont: "Fira Sans", sans-serif;
+$paddingRegisterBox: 80px 0;
+$fontSizeH1: 46px;
+
+h1 {
+  color: $primaryColor;
+  font-family: $primaryFont;
+  text-transform: uppercase;
+  font-size: $fontSizeH1;
+}
+label{
+    color: $textColor;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.register-main {
+  padding: $paddingRegisterBox;
+}
+
+.register-box {
+  background-color: $secondaryColor;
+  height: auto;
+}

@@ -4,10 +4,10 @@ const action = "/auth/register";
 const method = "POST";
 
 export async function register(profile) {
-  const regigsterURL = API_SOCIAL_URL + action;
+  const registerURL = API_SOCIAL_URL + action;
   const body = JSON.stringify(profile);
 
-  const response = await fetch(regigsterURL, {
+  const response = await fetch(registerURL, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -16,6 +16,5 @@ export async function register(profile) {
   });
 
   const result = await response.json();
-  alert("You are registered!");
   return result;
 }

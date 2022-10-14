@@ -8,20 +8,12 @@ import * as postMethods from "./post/postIndex.mjs";
 
 const path = window.location.pathname;
 
-if (path === "/profile/login/") {
+if (path === "/") {
   setLoginFormListener();
 } else if (path === "/profile/register/") {
   setRegisterFormListener();
-} else if (path === "/post/create/") {
+} else if (path === "/profile/myPage/") {
   setCreateFormListener();
 } else if (path === "/post/edit/") {
   setUpdateFormListener();
 }
-
-async function testTemplate() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#posts");
-  templates.renderPostTemplates(posts, container);
-}
-
-testTemplate();
