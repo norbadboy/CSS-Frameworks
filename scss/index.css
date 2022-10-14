@@ -166,4 +166,28 @@ body {
   .form-wrap input {
     width: 190px;
   }
+}
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+}
+
+.posts-container {
+  margin: auto;
+}
+
+.post {
+  background-color: lightgray;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 24px 0;
+}
+
+.postAuthor {
+  color: darkblue;
+}
+
+.postPic {
+  width: 100px;
+  height: 100px;
 }/*# sourceMappingURL=index.css.map */
