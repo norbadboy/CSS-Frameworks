@@ -53,12 +53,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav justify-content-between">
-              <form class="form-wrap d-flex">
-                <input class="form-control me-1" type="search" placeholder="Search" />
-                <button class="search-btn rounded" type="submit">
-                  <i class="fa fa-search" id="search-bar-icon"></i>
-                </button>
-              </form>
               <div class="cta-button d-flex">
                 <button class="login-btn rounded mx-2" onclick="window.location.href='/login.html'">
                   Login
@@ -77,29 +71,45 @@
         <div class="d-flex flex-column">
           <h2>New Post</h2>
           <form action="/postsIndex.html" class="new-post-wrap p-3 rounded">
-            <textarea
-              name="new-post--text"
-              id="newPostTitle"
-              cols="40"
-              rows="3"
-              placeholder="What are you thinking?"
-              class="rounded"
-            ></textarea>
-            <br />
+            <div class="d-flex flex-column">
+              <textarea
+                name="title"
+                id="newPostTitle"
+                cols="40"
+                rows="1"
+                placeholder="Title"
+                class="rounded px-2 py-1 mb-2"
+              ></textarea>
+              <textarea
+                name="body"
+                id="newPostBody"
+                cols="40"
+                rows="3"
+                placeholder="What are you thinking?"
+                class="rounded px-2 py-1 mb-2"
+              ></textarea>
+              <input
+                name="media"
+                type="url"
+                id="newPostMedia"
+                placeholder="Image URL"
+                class="rounded px-2 py-1 mb-2"
+                cols="40"
+                rows="3"
+              />
+            </div>
             <div class="mt-1">
               <button class="rounded" type="button" id="postButton">Post</button>
-              <input class="rounded ms-2" type="button" value="Upload img" />
             </div>
           </form>
         </div>
       </section>
       <section class="old-post mt-4 d-flex justify-content-center flex-column">
         <div>
-          <div class="checkbox-container">
+          <div class="checkbox-container mb-2">
             <input type="checkbox" id="filterCheckBox" name="filterCheckBox" value="myposts" />
-            <label for="filterCheckBox">Show only my posts</label>
+            <label for="filterCheckBox" class="mx-1">Show only my posts</label>
           </div>
-
           <div class="checkbox-container">
             <input
               type="text"
@@ -112,6 +122,51 @@
           <div class="posts-container mt-3 col-12 col-md-6 rounded" id="feeds"></div>
         </div>
       </section>
+      <!-- The Modal -->
+      <div id="myModal" class="modal py-3">
+        <!-- Modal content -->
+        <div class="modal-content px-5">
+          <span class="close mb-2 d-flex justify-content-end">&times;</span>
+          <form id="editPost">
+            <div class="form-group mb-3">
+              <textarea
+                name="title"
+                id="newPostTitle"
+                cols="40"
+                rows="1"
+                placeholder="Title"
+                class="rounded px-2 py-1 mb-2"
+              ></textarea>
+            </div>
+            <div class="form-group mb-3">
+              <textarea
+                name="body"
+                id="newPostBody"
+                cols="40"
+                rows="3"
+                placeholder="What are you thinking?"
+                class="rounded px-2 py-1 mb-2"
+              ></textarea>
+            </div>
+            <div class="form-group mb-3 d-flex flex-column">
+              <label for="" class="text-dark">Media </label>
+              <input
+                name="media"
+                type="url"
+                id="newPostMedia"
+                placeholder="https://example.com"
+                class="input-group-text rounded mb-2 d-flex justify-content-start bg-light"
+                cols="40"
+                rows="3"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <input type="hidden" class="form-control" name="id" required />
+            </div>
+            <button class="btn btn-success text-light" id="editPostButton">Update Post</button>
+          </form>
+        </div>
+      </div>
     </main>
   </body>
 </html>
@@ -140,15 +195,23 @@
 
   const postButton = document.getElementById("postButton");
   const newPostTitle = document.getElementById("newPostTitle");
+  const newPostBody = document.getElementById("newPostBody");
+  const newPostMedia = document.getElementById("newPostMedia");
+
   postButton.onclick = async function () {
     const postData = {
       title: newPostTitle.value,
-      body: "lorem ipsum",
-      media:
-        "https://i.picsum.photos/id/827/200/200.jpg?hmac=7S4fBvNQXv9S9XZnxThhj6tOFH_ktFgHQ8xkIW9lNcQ",
+      body: newPostBody.value,
+      media: newPostMedia.value,
     };
 
-    await createPost(postData);
-    await renderPosts(filterCheckBox.checked, titleSearchInput.value);
+    if (postData.title && postData.body && postData.media) {
+      await createPost(postData);
+      await renderPosts(filterCheckBox.checked, titleSearchInput.value);
+    } else {
+      alert("Please fill all the fields");
+    }
+    // await createPost(postData);
+    // await renderPosts(filterCheckBox.checked, titleSearchInput.value);
   };
 </script>
