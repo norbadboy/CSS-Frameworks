@@ -1,20 +1,19 @@
 import { getPost, updatePost } from "./post/postIndex.mjs";
 
 export async function setUpdateFormListener() {
-  const form = document.querySelector("#editPost");
+  const form = document.getElementById("updatePostForm");
 
   const url = new URL(window.location.href);
   const id = url.searchParams.get("id");
 
   if (form) {
-    const button = form.querySelector("editButton");
+    const button = form.querySelector("#editPostButton");
     button.disabled = true;
 
     const post = await getPost(id);
 
     form.title.value = post.title;
     form.body.value = post.body;
-    form.tags.value = post.tags;
     form.media.value = post.media;
 
     button.disabled = false;

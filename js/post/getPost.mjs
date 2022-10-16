@@ -13,11 +13,11 @@ export async function getPosts() {
 }
 
 export async function getPost(id) {
-  if (!id) {
-    throw new Error("Get requires post id");
-  }
+  // if (!id) {
+  //   throw new Error("Get requires post id");
+  // }
 
-  const getPostURL = `${API_SOCIAL_URL}${action}/${id}`;
+  const getPostURL = `${API_SOCIAL_URL}${action}/${id}?_author=true`;
 
   const response = await autFetch(getPostURL);
 

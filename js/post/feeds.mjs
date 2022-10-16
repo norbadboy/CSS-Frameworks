@@ -3,8 +3,6 @@ import { getPosts } from "./getPost.mjs";
 import { load } from "../storage/storageIndex.mjs";
 
 export async function renderPosts(onlyUserPosts = false, titleSearch = "") {
-  console.log("renderPosts", onlyUserPosts, titleSearch);
-
   const posts = await getPosts();
 
   // Show only 10 posts to not overload the page
