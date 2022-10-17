@@ -15,9 +15,9 @@ export async function getPosts() {
 
 // get post function
 export async function getPost(id) {
-  // if (!id) {
-  //   throw new Error("Get requires post id");
-  // }
+  if (!id) {
+    throw new Error("Get requires post id");
+  }
 
   const getPostURL = `${API_SOCIAL_URL}${action}/${id}?_author=true`;
 

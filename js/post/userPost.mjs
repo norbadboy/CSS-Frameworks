@@ -1,10 +1,5 @@
-import { load } from "../storage/storageIndex.mjs";
-import { removePost } from "../post/deletePost.mjs";
-import { updatePost } from "../post/updatePost.mjs";
-import { getPost } from "../post/getPost.mjs";
 import { autFetch } from "../auth/autFetchToken.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
-import { renderPostTemplates } from "../templates/postTemplate.mjs";
 
 const userPost = document.querySelector("#userPost");
 

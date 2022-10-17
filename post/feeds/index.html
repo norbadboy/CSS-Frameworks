@@ -217,24 +217,4 @@
       alert("Please fill all the fields");
     }
   };
-
-  const editPostButton = document.getElementById("editPostButton");
-  const editPostTitle = document.getElementById("editPostTitle");
-  const editPostBody = document.getElementById("editPostBody");
-  const editPostMedia = document.getElementById("editPostMedia");
-
-  editPostButton.onclick = async function () {
-    const editPostData = {
-      title: editPostTitle.value,
-      body: editPostBody.value,
-      media: editPostMedia.value,
-    };
-
-    if (editPostData.title && editPostData.body && editPostData.media) {
-      await updatePost(editPostData);
-      await renderPosts(filterCheckBox.checked, titleSearchInput.value);
-    } else {
-      alert("Please fill all the fields");
-    }
-  };
 </script>

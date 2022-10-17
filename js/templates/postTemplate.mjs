@@ -84,6 +84,29 @@ export function postTemplateB(postData) {
         modal.style.display = "none";
       };
 
+      const editPostButton = document.getElementById("editPostButton");
+      const editPostTitle = document.getElementById("editPostTitle");
+      const editPostBody = document.getElementById("editPostBody");
+      const editPostMedia = document.getElementById("editPostMedia");
+
+      // add event listener to edit post button
+      // when user click on edit post button, it will update the post
+      editPostButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const newPostData = {
+          title: editPostTitle.value,
+          body: editPostBody.value,
+          media: editPostMedia.value,
+          id: postData.id,
+        };
+
+        updatePost(newPostData).then((data) => {
+          modal.style.display = "none";
+          window.location.reload();
+        });
+      });
+
       // Delete button
       const deleteButton = document.createElement("button");
       deleteButton.classList.add("deleteButton", "rounded", "btn", "btn-danger");
