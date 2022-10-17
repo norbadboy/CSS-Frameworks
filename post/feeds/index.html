@@ -131,7 +131,7 @@
             <div class="form-group mb-3">
               <textarea
                 name="title"
-                id="newPostTitle"
+                id="editPostTitle"
                 cols="40"
                 rows="1"
                 placeholder="Title"
@@ -142,7 +142,7 @@
             <div class="form-group mb-3">
               <textarea
                 name="body"
-                id="newPostBody"
+                id="editPostBody"
                 cols="40"
                 rows="3"
                 placeholder="What are you thinking?"
@@ -155,7 +155,7 @@
               <input
                 name="media"
                 type="url"
-                id="newPostMedia"
+                id="editPostMedia"
                 placeholder="https://example.com"
                 class="input-group-text rounded mb-2 d-flex justify-content-start bg-light"
                 cols="40"
@@ -184,6 +184,7 @@
   // render all post first time user load the page
   await renderPosts(false, "");
 
+  // add event listener to filter checkbox
   filterCheckBox.onchange = async () => {
     await renderPosts(filterCheckBox.checked, titleSearchInput.value);
   };
@@ -200,6 +201,8 @@
   const newPostBody = document.getElementById("newPostBody");
   const newPostMedia = document.getElementById("newPostMedia");
 
+  // add event listener to post button
+  // when user click on post button, it will create a new post
   postButton.onclick = async function () {
     const postData = {
       title: newPostTitle.value,
@@ -216,13 +219,22 @@
   };
 
   const editPostButton = document.getElementById("editPostButton");
-  const editPostTitle = document.getElementById("newPostTitle");
-  const editPostBody = document.getElementById("newPostBody");
-  const editPostMedia = document.getElementById("newPostMedia");
+  const editPostTitle = document.getElementById("editPostTitle");
+  const editPostBody = document.getElementById("editPostBody");
+  const editPostMedia = document.getElementById("editPostMedia");
 
-  if (editPostButton) {
-    editPostButton.onclick = async function () {
-      setUpdateFormListener();
+  editPostButton.onclick = async function () {
+    const editPostData = {
+      title: editPostTitle.value,
+      body: editPostBody.value,
+      media: editPostMedia.value,
     };
-  }
+
+    if (editPostData.title && editPostData.body && editPostData.media) {
+      await updatePost(editPostData);
+      await renderPosts(filterCheckBox.checked, titleSearchInput.value);
+    } else {
+      alert("Please fill all the fields");
+    }
+  };
 </script>

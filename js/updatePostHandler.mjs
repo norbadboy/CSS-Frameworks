@@ -1,11 +1,13 @@
 import { getPost, updatePost } from "./post/postIndex.mjs";
 
+// update function
 export async function setUpdateFormListener() {
   const form = document.getElementById("updatePostForm");
 
   const url = new URL(window.location.href);
   const id = url.searchParams.get("id");
 
+  // get post by id
   if (form) {
     const button = form.querySelector("#editPostButton");
     button.disabled = true;

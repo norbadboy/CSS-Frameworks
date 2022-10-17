@@ -5,6 +5,7 @@ import { autFetch } from "../auth/autFetchToken.mjs";
 const action = "/posts";
 const method = "POST";
 
+// create post function
 export async function createPost(postData) {
   const createPostURL = API_SOCIAL_URL + action;
 

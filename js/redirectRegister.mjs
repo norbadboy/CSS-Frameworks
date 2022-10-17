@@ -1,5 +1,6 @@
 const redirectPage = document.querySelector("#newUser");
 
+// Redirect to login page when new user is registered
 export function handleSubmission() {
   redirectPage.innerHTML = "";
 

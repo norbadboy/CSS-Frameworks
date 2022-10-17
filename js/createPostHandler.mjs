@@ -1,5 +1,6 @@
 import { createPost } from "./post/postIndex.mjs";
 
+// set create post form listener
 export function setCreateFormListener() {
   const form = document.querySelector("#createPost");
 

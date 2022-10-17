@@ -4,6 +4,7 @@ import { setCreateFormListener } from "./createPostHandler.mjs";
 
 const path = window.location.pathname;
 
+// set listener when on path
 if (path === "/") {
   setLoginFormListener();
 } else if (path === "/profile/register/") {

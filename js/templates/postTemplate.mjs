@@ -5,6 +5,8 @@ import { getPost } from "../post/getPost.mjs";
 import { autFetch } from "../auth/autFetchToken.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
 
+// get token from local storage and fetch token from API
+// to get the post by id
 export function postTemplateB(postData) {
   const profile = load("profile");
   const userName = profile.name;
@@ -76,45 +78,11 @@ export function postTemplateB(postData) {
 
       editButton.onclick = function () {
         modal.style.display = "block";
-        const url = new URL(window.location.href);
-        const id = url.searchParams.get("id");
-        const form = document.getElementById("updatePostForm");
-        if (form) {
-          const button = form.querySelector("#editPostButton");
-          button.disabled = true;
-          const post = getPost(id);
-          form.title.value = post.title;
-          form.body.value = post.body;
-          form.media.value = post.media;
-          button.disabled = false;
-          form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const post = Object.fromEntries(formData.entries());
-            post.id = id;
-            updatePost(post);
-          });
-        }
       };
 
       span.onclick = function () {
         modal.style.display = "none";
       };
-
-      // const editPostButton = document.getElementById("editPostButton");
-      // editPostButton.addEventListener("click", async () => {
-      //   const title = document.getElementById("editTitle").value;
-      //   const body = document.getElementById("editBody").value;
-      //   const media = document.getElementById("editMedia").value;
-      //   const post = {
-      //     title: title,
-      //     body: body,
-      //     media: media,
-      //   };
-      //   const response = await updatePost(postData.id, post);
-      //   console.log(response);
-      // });
 
       // Delete button
       const deleteButton = document.createElement("button");

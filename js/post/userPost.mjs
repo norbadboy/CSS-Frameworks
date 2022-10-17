@@ -6,7 +6,6 @@ import { autFetch } from "../auth/autFetchToken.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { renderPostTemplates } from "../templates/postTemplate.mjs";
 
-// const userPostUrl = "/post/feeds/userPost.html?id="
 const userPost = document.querySelector("#userPost");
 
 const queryString = window.location.search;
@@ -16,6 +15,7 @@ console.log(postId);
 
 const userPostUrl = API_SOCIAL_URL + "/posts/" + postId;
 
+// view user post
 async function viewPost() {
   try {
     const response = await autFetch(userPostUrl);

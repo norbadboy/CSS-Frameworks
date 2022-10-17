@@ -1,5 +1,6 @@
 import { load } from "../storage/storageIndex.mjs";
 
+// get token from local storage
 export function headers() {
   const token = load("token");
   return {
@@ -8,6 +9,7 @@ export function headers() {
   };
 }
 
+// fetch token from API
 export async function autFetch(url, options = {}) {
   return fetch(url, {
     ...options,
