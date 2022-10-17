@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="a social media application" />
+    <meta name="author" content="Thong Trong Ho" />
+    <title>Contactbook - Register Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/87903c1d5c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/scss/index.css" />
+    <link rel="stylesheet" href="/scss/register.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/index.mjs" defer type="module"></script>
+  </head>
+  <body>
+    <main class="register-main d-flex min-vh-100 justify-content-center text-light">
+      <div class="register-box d-flex flex-column justify-content-center rounded px-4" id="newUser">
+        <div class="row justify-content-center">
+          <div class="text">
+            <h1 class="d-flex justify-content-center mb-4">register</h1>
+            <form id="registerForm">
+              <div class="form-group mb-3">
+                <label for="" class="mb-1"> Name </label>
+                <input
+                  class="form-control py-3"
+                  type="text"
+                  name="name"
+                  required
+                  pattern="^[\w]+$"
+                  title="User name must only contain lowercase and uppercase, numbers and underscore"
+                />
+                <p class="mt-1 ps-1 text-small" id="login-email-error">
+                  Only lowercase and uppercase, numbers and underscore (_)
+                </p>
+              </div>
+              <div class="form-group mb-3">
+                <label for="" class="mb-1">Email </label>
+                <input
+                  class="form-control py-3"
+                  type="email"
+                  name="email"
+                  required
+                  pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                  title="Only @(study.)noroff.no domains are allow to register."
+                />
+                <p class="mt-1 ps-1 text-small">Only email from @noroff.no or @stud.noroff.no</p>
+              </div>
+              <div class="form-group mb-3">
+                <label for="" class="mb-1">Password </label>
+                <input
+                  class="form-control py-3"
+                  type="password"
+                  name="password"
+                  required
+                  minlength="8"
+                />
+                <p class="mt-1 text-small">Minimum 8 characters</p>
+              </div>
+              <div>
+                <input
+                  class="btn btn-success text-light"
+                  type="submit"
+                  id="submit"
+                  value="Register"
+                />
+                <div class="d-flex mt-2">
+                  <p>or</p>
+                  <a href="/" class="text-decoration-underline px-1">log in</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
